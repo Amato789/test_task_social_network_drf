@@ -2,7 +2,7 @@ from django.db.models import Count
 from rest_framework import generics
 from rest_framework.permissions import IsAuthenticated
 from .models import Post, Like
-from .serializers import PostSerializer, LikeSerializers, LikeAnaliticsSerializers, UserActivitySerializers
+from .serializers import PostSerializer, LikeSerializers, LikeAnalyticsSerializers, UserActivitySerializers
 from django_filters.rest_framework import DjangoFilterBackend
 from django_filters import rest_framework as filters
 from django.db.models.functions import TruncDay
@@ -35,8 +35,8 @@ class PostLikeAPIView(generics.CreateAPIView):
     permission_classes = (IsAuthenticated,)
 
 
-class LikeAnaliticsAPIView(generics.ListAPIView):
-    serializer_class = LikeAnaliticsSerializers
+class LikeAnalyticsAPIView(generics.ListAPIView):
+    serializer_class = LikeAnalyticsSerializers
     filter_backends = (DjangoFilterBackend,)
     filterset_class = LikeFilter
     permission_classes = (IsAuthenticated,)

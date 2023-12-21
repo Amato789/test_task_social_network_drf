@@ -23,7 +23,7 @@ class LikeSerializers(serializers.ModelSerializer):
         return like
 
 
-class LikeAnaliticsSerializers(serializers.ModelSerializer):
+class LikeAnalyticsSerializers(serializers.ModelSerializer):
     period = serializers.DateTimeField(format="%d.%m.%Y",)
     likes = serializers.IntegerField()
 
